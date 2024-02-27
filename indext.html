@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Chủ</title>
-
+    <title>Trang chủ</title>
     <!-- icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- font chữ -->
@@ -16,26 +15,25 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <!-- Thẻ chứa toàn bộ nội dung trang chủ -->
-    <div class="app">
+    <!-- Thẻ chứa toàn bộ nội dung của trang chủ -->
+    <div id="app">
         <!-- Header của trang chủ -->
         <header class="header">
-            <!-- Header có 3 phần -->
+            <!-- Trong header có 3 phần -->
+            <!-- logo -->
+            <img src="./assets/image/logo-poly.png" alt="" class="header__logo">
 
-            <!-- Logo -->
-            <img src="./image/Logo_Fpoly.png" alt="" class="header__logo">
-
-            <!-- Menu -->
+            <!-- menu -->
             <nav class="header__nav">
                 <ul>
-                    <li><a href="">Home</a></li>
+                    <li><a href="./index.html">Home</a></li>
                     <li>
-                        <a href="">Shop</a>
+                        <a href="./shop.html">Shop</a>
                         <div class="nav__sub">
                             <ul>
                                 <li><a href="">Light</a></li>
-                                <li><a href="">Sofar</a></li>
-                                <li><a href="">Kitchen</a></li>
+                                <li><a href="">Sofa</a></li>
+                                <li><a href="">Ketchen</a></li>
                                 <li><a href="">Table</a></li>
                             </ul>
                         </div>
@@ -46,23 +44,51 @@
             </nav>
 
             <div class="header__action">
-                <i class="fa-regular fa-user"></i>
+                <!-- user -->
+                <span id="login"><i class="fa-regular fa-user"></i></span>
+                <!-- search -->
                 <i class="fa-solid fa-magnifying-glass"></i>
+                <!-- heart -->
                 <i class="fa-regular fa-heart"></i>
-                <i class="fa-solid fa-cart-shopping"></i>    
+                <!-- cart -->
+                <i class="fa-solid fa-cart-shopping"></i>
             </div>
-            
+
+
         </header>
 
+        <h1>Trang chủ</h1>
 
-
-
-
+        <div id="modal" class="modal">
+           
+            <div class="modal__content">
+                <!-- thẻ của phần đăng nhập -->
+            </div>
+            <div id="modal__overlay" class="modal__overlay"></div>
+        </div>
     </div>
 
+    
+    <script>
+        // lấy element của nút đăng nhập
+        var login = document.getElementById('login');
 
+        //lây modal
+        var modal = document.getElementById('modal');
 
+        // khai báo 1 sự kiện click bằng 1 function
+        // khi nhấn nút đăng nhập thì hiển thị modal
+        login.onclick = function(){
+            modal.style.display = 'flex';
+        }
 
+        // tắt Modal
+        var modal__overlay = document.getElementById('modal__overlay');
 
+        modal__overlay.onclick = function(){
+            modal.style.display = 'none';
+        }
+
+    </script>
 </body>
 </html>
